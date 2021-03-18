@@ -1,7 +1,7 @@
 class Movie < ActiveRecord::Base
 		
-  def self.filter_by_ratings(selected)
-		Movie.where(:rating => selected)
+  def self.filter_and_sort(selected, sort)
+		Movie.where(rating:selected).order(sort)
 	end
 
 	def self.all_ratings
